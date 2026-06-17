@@ -58,7 +58,7 @@ class TextConditionedHandwritingRNN(nn.Module):
         self.hidden_dim = hidden_dim
         self.char_embedding = nn.Embedding(vocab_size, hidden_dim)
         
-        # Takes stroke vector (3) + text context vector (hidden_dim)
+        # Takes stroke vector (3) + text context vector (hidden_dim)ś
         self.lstm = nn.LSTM(input_size=3 + hidden_dim, hidden_size=hidden_dim, batch_first=True)
         self.fc = nn.Linear(hidden_dim + hidden_dim, 5)
 
