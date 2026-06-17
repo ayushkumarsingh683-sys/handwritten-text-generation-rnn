@@ -7,9 +7,9 @@ A character-level Recurrent Neural Network (RNN) implemented in PyTorch that sim
 Instead of generating static pixel images, this model tracks sequential pen-tip movements—learning the structural dynamics of letter formations to "draw" cursive-like strokes from scratch.
 
 ## 🚀 Features
-- **Online Coordinate Processing:** Tracks relative changes ($\Delta x$, $\Delta y$) and binary pen states (up/down strokes).
+- **Online Coordinate Processing:** Tracks relative changes (Delta X, Delta Y) and binary pen states (up/down strokes).
 - **Text-Conditioning Engine:** Uses a character embedding layer to map specific words to distinct drawing behaviors.
-- **Probabilistic Generation:** Employs spatial distributions ($\mu, \sigma$) to sample organic, varied stroke outputs rather than rigid repetitions.
+- **Probabilistic Generation:** Employs spatial distributions (means and standard deviations) to sample organic, varied stroke outputs.
 
 ## 🛠️ Architecture Overview
 The model passes embedded text context alongside historical pen stroke vectors into a deep **LSTM network**. The network translates these hidden states into probabilistic distribution parameters, allowing a bivariate normal sampling loop to iteratively construct the final canvas trajectory.
